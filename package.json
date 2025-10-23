@@ -25,18 +25,18 @@
     "@langchain/core": "^0.3.78",
     "@langchain/google-genai": "^0.1.6",
     "@supabase/supabase-js": "^2.48.1",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.10.5",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "groq-sdk": "^0.8.0",
     "langchain": "^0.3.14",
+    "typescript": "^5.7.3",
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.10.5",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3",
     "vitest": "^2.1.8"
   }
 }
