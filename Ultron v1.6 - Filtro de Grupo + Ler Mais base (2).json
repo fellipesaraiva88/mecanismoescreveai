@@ -1,0 +1,1087 @@
+{
+  "name": "Ultron v1.6 - Filtro de Grupo + Ler Mais base",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        768
+      ],
+      "id": "e79a52ea-7fd9-4430-86a2-2927d4e04333",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9fe7060d-289a-44d8-93b6-059c4cf1d076",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {},
+      "name": "Controle de Grupos",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        272
+      ],
+      "id": "4db97ec6-f6af-4882-941b-016b704f71dc"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        624
+      ],
+      "id": "5f862fe1-81d0-4699-805b-1524cd61d371",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {},
+      "id": "3e2eaf56-9496-4361-8884-e76651e6f1bd",
+      "name": "No Operation, do nothing2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        672,
+        1024
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2a634c73-33a7-4da1-af84-a4f49bf36ca6",
+      "name": "enviadoPorMim?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        704,
+        480
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "48d893ba-5a03-4c62-abc1-057abbf452d5",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        80,
+        720
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "81c78efe-f2d5-4ab8-9a18-6aa95d29b9b6",
+      "name": "Filtro Privado/Grupo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        400,
+        752
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "User Data - Privado",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1312,
+        560
+      ],
+      "id": "6d2893d0-33bf-4d23-bba7-139bc0289b39"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        992,
+        752
+      ],
+      "id": "d6f64712-4160-4f22-a9e4-d12114676976",
+      "name": "If-group",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        1056
+      ],
+      "id": "bfc41066-417a-4a8d-bb3b-1033cdf31cfc",
+      "name": "If1"
+    },
+    {
+      "parameters": {},
+      "name": "Base - Privado1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1984,
+        560
+      ],
+      "id": "5c098e65-b59e-4a0a-94b2-cc20643b6fad"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1744,
+        560
+      ],
+      "id": "96ef3538-9e11-4170-aab0-f658fb99099c",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "id": "9bcbbf84-19fa-472c-bb5c-4ea053b5b39f",
+      "name": "Ultron - Aplicação do OGRT",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [
+        2848,
+        528
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "c894ac2c-bc0a-41f8-9b7a-a5ab05ba3d78",
+      "name": "Enviar Transcrição - Privado1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4128,
+        528
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3920,
+        528
+      ],
+      "id": "01eebed4-64eb-44d7-9e65-236acef85645",
+      "name": "Ler Mais1",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3712,
+        528
+      ],
+      "id": "3a873ae8-d051-48dd-9eee-03e9b3a53327",
+      "name": "Replace1",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "de058ce9-0ffe-4963-81ab-7ba347189df2",
+      "name": "Ultron - Revisor OGRT",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [
+        3312,
+        528
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "name": "CodegroupsIDs1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        704,
+        720
+      ],
+      "id": "b99b8404-c69d-4001-849d-546d95ce7a47"
+    },
+    {
+      "parameters": {},
+      "id": "50396d33-bbff-41ba-bc3a-cefbb50e9cfb",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        720
+      ],
+      "webhookId": "007558a9-65b2-432c-8480-e6ac6cce30cb"
+    },
+    {
+      "parameters": {},
+      "id": "dc928987-85f0-4f49-b7f4-e19a58433f36",
+      "name": "IF - Áudio < 30s ?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1312,
+        368
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "IF - Direcionar Curto ou Completo?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2464,
+        480
+      ],
+      "id": "8738b486-8daa-4128-9487-113323989a47"
+    },
+    {
+      "parameters": {},
+      "id": "94e39ee0-9ef6-4214-ac80-59eb5630ef73",
+      "name": "Ultron - Aplicação do OGRT (Curta)",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [
+        2864,
+        208
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "08c63925-42f8-4869-a345-8e8a357905db",
+      "name": "Ler Mais (Curta)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3904,
+        208
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "25699356-eb96-4a3c-9073-9c609da8a952",
+      "name": "Enviar Transcrição - Curta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4128,
+        208
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        272
+      ],
+      "id": "9c7de146-b6da-47d9-ac7a-86890f0da405",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2688,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "5b051462-0254-42b0-b9f0-8c6700f364d9",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {},
+      "id": "eb9e0b20-1845-4664-8b03-746cc01d5e0d",
+      "name": "Ultron - Aplicação do OGRT2",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [
+        2832,
+        1104
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "8551cffd-339c-4f71-93d2-9bc0fe587489",
+      "name": "Enviar Transcrição - Privado2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4112,
+        1104
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3904,
+        1104
+      ],
+      "id": "2dfb747f-9f60-459a-8762-a5e6ec979bac",
+      "name": "Ler Mais2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3680,
+        1104
+      ],
+      "id": "5630c120-439f-4de7-abc5-b210a23d8304",
+      "name": "Replace2"
+    },
+    {
+      "parameters": {},
+      "id": "fdd1e7d4-f7d3-468f-882e-55a8cb8fd884",
+      "name": "Ultron - Revisor OGRT2",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [
+        3280,
+        1104
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "IF - Direcionar Curto ou Completo?1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2448,
+        928
+      ],
+      "id": "13a2f704-161b-4bd1-badf-b76d8e69819b"
+    },
+    {
+      "parameters": {},
+      "id": "8453b7dc-64f0-4e3b-b429-a20032754a72",
+      "name": "Ultron - Aplicação do OGRT (Curta)1",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.4,
+      "position": [
+        2864,
+        832
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "72b4775e-5c03-4f4e-8f91-74a5f3293a94",
+      "name": "Ler Mais (Curta)1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3904,
+        832
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9ecf6321-e497-4acf-b0d9-b84337530c71",
+      "name": "Enviar Transcrição - Curta1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4128,
+        832
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "61dedf07-ed6a-4b66-9b5e-8289c2758186",
+      "name": "IF - Áudio < 30s ?1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1328,
+        848
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        3584,
+        704
+      ],
+      "id": "57317270-56eb-4cc7-80cf-7ec5a99f5fad",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "oyeJO8jE9uCycmbb",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "535d74f6-64d7-4c53-9507-bea13404b8ee",
+      "name": "Get Base - Privado1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1744,
+        400
+      ],
+      "alwaysOutputData": false,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {},
+      "name": "requisiçãoGroq",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2240,
+        480
+      ],
+      "id": "d6c7cc6b-721c-470a-be2a-f930b8afac15"
+    },
+    {
+      "parameters": {},
+      "name": "Requisição Groq - Grupo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2240,
+        928
+      ],
+      "id": "7090d1ee-31d2-47c7-96a0-74aae70ad3ff"
+    },
+    {
+      "parameters": {},
+      "id": "e6e63761-abc4-40a8-a184-fbd680bd46c1",
+      "name": "userData",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1344,
+        1008
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e51303b3-495d-4fcb-9f22-37bf4dc2b260",
+      "name": "Get Base - Grupo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        880
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "Convert to File - Grupo",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1968,
+        880
+      ],
+      "id": "8985d5d5-92c7-4f58-8c98-5c5ce31e6b25",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {},
+      "name": "Convert to File - Privado",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1984,
+        400
+      ],
+      "id": "1b8d086c-3943-432b-a4ba-c141611cf09a",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {},
+      "id": "58288bb4-c72d-410f-a38a-fb3468680e0d",
+      "name": "Get Conversation History - Privado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1504,
+        624
+      ]
+    }
+  ],
+  "pinData": {
+    "Ultron - Aplicação do OGRT": [
+      {
+        "json": {
+          "text": " Saravão, a gente precisa fazer o melhor fluxo para esse cara conseguir conectar o WhatsApp dele lá e configurar a IA porque o nosso produto principal e o que a gente está oferecendo é um atendimento automatizado humanizado e bom se isso não for bom que no caso é o atendimento as respostas dentro do WhatsApp tipo, já era, entendeu? é que nem, por exemplo a gente vai vender hambúrguer, o hambúrguer tem que ser bom a carne tem que ser boa então é isso que a gente está oferecendo é um atendimento bom, automatizado humanizado pro pet então eu não sei qual a melhor forma, por exemplo, a gente pode continuar fazendo do jeito que você colocou lá, que a pessoa é obrigada a colocar o whatsapp dela lá do business dela e já colocar, mas o que não pode ocorrer, por exemplo ela não configurar já De forma, porque Eu coloquei lá E a IA começou a responder Sem eu ter configurado nada E responder em grupo Inclusive isso é uma coisa que a gente tem que Tem que colocar A IA não responde grupo Então colocar grupo pra responder Se for possível Mas um fluxograma é esse É a gente Isso que você fez De colocar a a pessoa, pra colocar o WhatsApp direto logo quando ela entra, mas se for poss j colocar ela de obrigat mesmo pra ela responder o onboard perguntas configurar a IA da melhor maneira Eu acho que esse um exemplo de fluxograma O outro exemplo de fluxograma é a pessoa não ser obrigada a colocar o WhatsApp logo de cara, entra na plataforma normal, igual a gente fez da outra vez, e a gente deixa bem indicativo que a primeira coisa que ela precisa fazer é configurar a IA e, após isso, colocar o WhatsApp dela, ou vice-versa. Mas, eu acho que só tem esses dois fluxogramas. Ou obriga ela a já colocar o WhatsApp e configurar a IA logo no começo, ou coloca ela na plataforma e indica que a primeira coisa que ela precisa fazer é colocar o WhatsApp ou configurar a IA e, após isso, configurar a IA e após isso colocar o WhatsApp. Entendeu? Eu acho que só tem essas duas maneiras. Eu não sei qual maneira fica mais fácil. E tendo isso pronto, tendo isso certo, a IA tá respondendo certinho, a gente tá atendendo bem de forma humanizada, no nicho patch, e tendo um dash bonito igual você fez, pronto, a gente já pode começar a rodar. O MVP tá pronto. Mas essa parte de a pessoa colocar o WhatsApp, a pessoa configurar a IA, e a IA responder de maneira correta e decente, é o nosso core do nosso business. Tipo, isso precisa estar funcionando, porque senão não tem nem MVP. A gente precisa disso para o MVP.",
+          "x_groq": {
+            "id": "req_01k72zdz37ew98n7q44c1ak5fm"
+          }
+        }
+      }
+    ],
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "pangea-n8n.kmvspi.easypanel.host",
+            "user-agent": "axios/1.10.0",
+            "content-length": "1842",
+            "accept": "application/json, text/plain, */*",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.18.0.1",
+            "x-forwarded-host": "pangea-n8n.kmvspi.easypanel.host",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "21a2fc0f08bf",
+            "x-real-ip": "172.18.0.1"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "event": "messages.upsert",
+            "instance": "saraiva",
+            "data": {
+              "key": {
+                "remoteJid": "120363404369363372@g.us",
+                "fromMe": false,
+                "id": "3A2C7A56E16302CDC43B",
+                "participant": "209912282001464@lid"
+              },
+              "pushName": "Joaquim",
+              "status": "DELIVERY_ACK",
+              "message": {
+                "audioMessage": {
+                  "url": "https://mmg.whatsapp.net/v/t62.7117-24/562372174_1334835271653770_6552900096617810369_n.enc?ccb=11-4&oh=01_Q5Aa2wFOtrkJS9KuRlo_XLnnRL8mfXE2QQ3P-gqkQJ40iCDLbg&oe=690EF10B&_nc_sid=5e03e0&mms3=true",
+                  "mimetype": "audio/ogg; codecs=opus",
+                  "fileSha256": "S9DZL75ArulNa2e33pvYkWqj477Zpuaq/HPPRxnt7vk=",
+                  "fileLength": "58954",
+                  "seconds": 28,
+                  "ptt": true,
+                  "mediaKey": "gR4CM6IowwEfk2m+BlgRfHl0lo/4biA936SfbE7EbvM=",
+                  "fileEncSha256": "+V5zes+n3IgLRc2Ps8nT072zkoEMmbhpnlriOKcUHOw=",
+                  "directPath": "/v/t62.7117-24/562372174_1334835271653770_6552900096617810369_n.enc?ccb=11-4&oh=01_Q5Aa2wFOtrkJS9KuRlo_XLnnRL8mfXE2QQ3P-gqkQJ40iCDLbg&oe=690EF10B&_nc_sid=5e03e0",
+                  "mediaKeyTimestamp": "1760006980",
+                  "contextInfo": {
+                    "stanzaId": "3AAB15F43F1D45A4C374",
+                    "participant": "132791933120732@lid",
+                    "quotedMessage": {
+                      "conversation": "E como foi?"
+                    }
+                  },
+                  "streamingSidecar": "ziRWQ92Lr+3MPg==",
+                  "waveform": "ByRYZEhhPiZhZFw4MS1LJQIfEwIAZGRkZCkzQFheXl4cNFhkXEhcSzg/FlhkYyBEZGFaZEsxXicDDTQFAUFkVQ=="
+                },
+                "messageContextInfo": {
+                  "messageSecret": "NNAyYA1kZuit+ytEk9zbanHlpIpNWC0k10J5CipWvRc="
+                }
+              },
+              "contextInfo": {
+                "stanzaId": "3AAB15F43F1D45A4C374",
+                "participant": "132791933120732@lid",
+                "quotedMessage": {
+                  "conversation": "E como foi?"
+                }
+              },
+              "messageType": "audioMessage",
+              "messageTimestamp": 1760007009,
+              "instanceId": "3e54cb7a-6387-439d-9071-c4a59c69ae47",
+              "source": "ios"
+            },
+            "destination": "https://pangea-n8n.kmvspi.easypanel.host/webhook/007558a9-65b2-432c-8480-e6ac6cce30cb",
+            "date_time": "2025-10-09T07:50:10.032Z",
+            "sender": "5511991143605@s.whatsapp.net",
+            "server_url": "https://pangea-evolution-api.kmvspi.easypanel.host",
+            "apikey": "3EED3AC7FB97-4645-B82E-DFA0D3A34047"
+          },
+          "webhookUrl": "https://pangea-n8n.kmvspi.easypanel.host/webhook/007558a9-65b2-432c-8480-e6ac6cce30cb",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "enviadoPorMim?": {
+      "main": [
+        [
+          {
+            "node": "User Data - Privado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Filtro Privado/Grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtro Privado/Grupo": {
+      "main": [
+        [
+          {
+            "node": "enviadoPorMim?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "CodegroupsIDs1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "CodegroupsIDs1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "User Data - Privado": {
+      "main": [
+        [
+          {
+            "node": "IF - Áudio < 30s ?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If-group": {
+      "main": [
+        [
+          {
+            "node": "userData",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Get Base - Grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Base - Privado1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File - Privado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Get Base - Privado1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Base - Privado1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultron - Aplicação do OGRT": {
+      "main": [
+        [
+          {
+            "node": "Ultron - Revisor OGRT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler Mais1": {
+      "main": [
+        [
+          {
+            "node": "Enviar Transcrição - Privado1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace1": {
+      "main": [
+        [
+          {
+            "node": "Ler Mais1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultron - Revisor OGRT": {
+      "main": [
+        [
+          {
+            "node": "Replace1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CodegroupsIDs1": {
+      "main": [
+        [
+          {
+            "node": "If-group",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Áudio < 30s ?": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Direcionar Curto ou Completo?": {
+      "main": [
+        [
+          {
+            "node": "Ultron - Aplicação do OGRT (Curta)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ultron - Aplicação do OGRT (Curta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultron - Aplicação do OGRT (Curta)": {
+      "main": [
+        [
+          {
+            "node": "Ler Mais (Curta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler Mais (Curta)": {
+      "main": [
+        [
+          {
+            "node": "Enviar Transcrição - Curta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultron - Aplicação do OGRT2": {
+      "main": [
+        [
+          {
+            "node": "Ultron - Revisor OGRT2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler Mais2": {
+      "main": [
+        [
+          {
+            "node": "Enviar Transcrição - Privado2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace2": {
+      "main": [
+        [
+          {
+            "node": "Ler Mais2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultron - Revisor OGRT2": {
+      "main": [
+        [
+          {
+            "node": "Replace2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Direcionar Curto ou Completo?1": {
+      "main": [
+        [
+          {
+            "node": "Ultron - Aplicação do OGRT (Curta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ultron - Aplicação do OGRT (Curta)1": {
+      "main": [
+        [
+          {
+            "node": "Ler Mais (Curta)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler Mais (Curta)1": {
+      "main": [
+        [
+          {
+            "node": "Enviar Transcrição - Curta1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - Áudio < 30s ?1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Ultron - Aplicação do OGRT (Curta)",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Ultron - Aplicação do OGRT2",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Ultron - Revisor OGRT2",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Ultron - Aplicação do OGRT (Curta)1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Ultron - Aplicação do OGRT",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Ultron - Revisor OGRT",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Base - Privado1": {
+      "main": [
+        [
+          {
+            "node": "Convert to File - Privado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "requisiçãoGroq": {
+      "main": [
+        [
+          {
+            "node": "IF - Direcionar Curto ou Completo?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Requisição Groq - Grupo": {
+      "main": [
+        [
+          {
+            "node": "IF - Direcionar Curto ou Completo?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Base - Grupo": {
+      "main": [
+        [
+          {
+            "node": "Convert to File - Grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "userData": {
+      "main": [
+        [
+          {
+            "node": "IF - Áudio < 30s ?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File - Grupo": {
+      "main": [
+        [
+          {
+            "node": "Requisição Groq - Grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File - Privado": {
+      "main": [
+        [
+          {
+            "node": "requisiçãoGroq",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f69df0e3-41a8-459b-a68b-f17cea0af0cc",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "fc57fc963fd415098bcb5417a122d3a79643a5e2784f9564aba778a0de4cf4d8"
+  },
+  "id": "8MvWMwg3nSnFVVhY",
+  "tags": [
+    {
+      "createdAt": "2025-10-16T21:09:44.813Z",
+      "updatedAt": "2025-10-16T21:09:44.813Z",
+      "id": "9bzUxpRMq1R9wVSZ",
+      "name": "Luís Felipe"
+    }
+  ]
+}

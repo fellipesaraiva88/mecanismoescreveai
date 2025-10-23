@@ -1,0 +1,42 @@
+{
+  "name": "escreveai-workflows",
+  "version": "1.0.0",
+  "description": "Sistema modular para automações e workflows",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest"
+  },
+  "keywords": [
+    "automation",
+    "workflows",
+    "webhooks",
+    "ai"
+  ],
+  "author": "Saraiva",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "@langchain/anthropic": "^0.3.14",
+    "@langchain/community": "^0.3.22",
+    "@langchain/core": "^0.3.78",
+    "@langchain/google-genai": "^0.1.6",
+    "@supabase/supabase-js": "^2.48.1",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "groq-sdk": "^0.8.0",
+    "langchain": "^0.3.14",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
