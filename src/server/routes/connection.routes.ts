@@ -25,8 +25,20 @@ export function setupConnectionRoutes(app: Express): void {
       // 2. Conectar e obter QR Code
       const qrcode = await connectionService.connect()
 
+      // Se já está conectado (qrcode === null)
+      if (!qrcode) {
+        return res.json({
+          success: true,
+          alreadyConnected: true,
+          message: 'WhatsApp já está conectado! Redirecionando para o dashboard...',
+          status: 'connected',
+        })
+      }
+
+      // Se gerou QR code
       res.json({
         success: true,
+        alreadyConnected: false,
         message: 'QR Code gerado. Escaneie com seu WhatsApp.',
         qrcode: {
           code: qrcode.code,

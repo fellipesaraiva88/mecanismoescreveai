@@ -78,16 +78,33 @@ export function useWhatsAppConnection() {
 
       const data = await response.json()
 
-      if (data.success && data.qrcode) {
-        setState(prev => ({
-          ...prev,
-          status: 'qr',
-          qrCode: data.qrcode.code,
-          error: null,
-        }))
-      } else {
-        throw new Error(data.error || 'Erro ao obter QR Code')
+      if (data.success) {
+        // Se já está conectado, pula para o dashboard
+        if (data.alreadyConnected) {
+          setState(prev => ({
+            ...prev,
+            status: 'connected',
+            isConnected: true,
+            qrCode: null,
+            error: null,
+          }))
+          return
+        }
+
+        // Se tem QR code, mostra para escanear
+        if (data.qrcode) {
+          setState(prev => ({
+            ...prev,
+            status: 'qr',
+            qrCode: data.qrcode.code,
+            error: null,
+          }))
+          return
+        }
       }
+
+      // Se não tem QR code nem está conectado, erro
+      throw new Error(data.error || 'Erro ao obter QR Code')
     } catch (err: any) {
       setState(prev => ({
         ...prev,

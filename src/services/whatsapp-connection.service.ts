@@ -54,6 +54,15 @@ export class WhatsAppConnectionService {
    */
   async createInstance(): Promise<any> {
     try {
+      // Primeiro, verifica se a instância já existe
+      const existingInstance = await this.getInstanceInfo()
+
+      if (existingInstance) {
+        console.log('ℹ️ Instância já existe:', this.instance)
+        return { exists: true, instance: existingInstance }
+      }
+
+      // Se não existe, cria uma nova
       const response = await this.client.post('/instance/create', {
         instanceName: this.instance,
         token: this.apiKey,
@@ -64,8 +73,9 @@ export class WhatsAppConnectionService {
       console.log('✅ Instância criada:', this.instance)
       return response.data
     } catch (error: any) {
-      if (error.response?.status === 409) {
-        console.log('ℹ️ Instância já existe:', this.instance)
+      // 403 ou 409 significa que a instância já existe
+      if (error.response?.status === 403 || error.response?.status === 409) {
+        console.log('ℹ️ Instância já existe (erro capturado):', this.instance)
         return { exists: true }
       }
       throw error
@@ -75,12 +85,19 @@ export class WhatsAppConnectionService {
   /**
    * 📱 Conectar instância e obter QR Code
    */
-  async connect(): Promise<QRCodeData> {
+  async connect(): Promise<QRCodeData | null> {
     try {
       console.log(`🔄 Tentando conectar instância: ${this.instance}`)
 
       const response = await this.client.get(`/instance/connect/${this.instance}`)
 
+      // Se já está conectado, retorna null (sem QR code)
+      if (response.data.instance?.state === 'open') {
+        console.log('✅ Instância já está conectada - sem necessidade de QR Code')
+        return null
+      }
+
+      // Se tem QR code, retorna
       if (response.data.code) {
         console.log('✅ QR Code obtido com sucesso')
         return {
@@ -90,7 +107,17 @@ export class WhatsAppConnectionService {
         }
       }
 
-      throw new Error('QR Code não retornado pela API')
+      // Se tem pairingCode, também funciona como QR code alternativo
+      if (response.data.pairingCode) {
+        console.log('✅ Pairing Code obtido (alternativa ao QR Code)')
+        return {
+          code: response.data.pairingCode,
+          base64: '',
+          count: 0,
+        }
+      }
+
+      throw new Error('Nenhum código de autenticação retornado pela API')
     } catch (error: any) {
       console.error('❌ Erro ao conectar:', error.message)
       throw error
